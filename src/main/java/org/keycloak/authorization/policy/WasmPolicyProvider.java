@@ -129,10 +129,6 @@ public class WasmPolicyProvider implements PolicyProvider {
             String key = instance.memory().readString(keyAddr, keySize);
             String value = instance.memory().readString(valueAddr, valueSize);
             System.out.println("FUNCTION: HAS ATTRIBUTE VALUE " + key + " : " + value);
-            for (var x: identity.getAttributes().toMap().entrySet()) {
-                System.out.println("DEBUG: " + x.getKey() + " - " + x.getValue());
-            }
-
             if (identity.getAttributes().containsValue(key, value)) {
                 return TRUE_RES;
             } else {
