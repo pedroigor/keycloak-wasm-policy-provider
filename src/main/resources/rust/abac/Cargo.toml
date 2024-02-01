@@ -1,0 +1,20 @@
+[package]
+name    = "abac"
+version = "0.1.0"
+authors = ["andrea.peruffo1982@gmail.com"]
+edition = "2018"
+
+[lib]
+crate-type = ["cdylib"]
+path = "abac.rs"
+
+[dependencies]
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+base64 = "0.21.7"
+base64-serde = "0.7.0"
+
+[profile.release]
+opt-level = 0
+lto = "off"
+codegen-units = 1
