@@ -41,8 +41,8 @@ public class Main {
         Map<String, String> config = wasmPolicy.getConfig();
 
         // at the moment either rbac or abac
-        // config.put(WASM_FILE, "rbac");
-        config.put(WASM_FILE, "abac");
+        config.put(WASM_FILE, "rbac");
+        // config.put(WASM_FILE, "abac");
 
         authorization.policies().policy(wasmPolicy.getId()).update(wasmPolicy);
     }
