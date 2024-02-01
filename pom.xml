@@ -10,6 +10,7 @@
 
     <properties>
         <keycloak.version>23.0.5</keycloak.version>
+        <chicory.version>0.0.7</chicory.version>
 
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
@@ -31,6 +32,11 @@
             <groupId>org.keycloak</groupId>
             <artifactId>keycloak-junit5</artifactId>
             <version>${keycloak.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.dylibso.chicory</groupId>
+            <artifactId>runtime</artifactId>
+            <version>${chicory.version}</version>
         </dependency>
     </dependencies>
 

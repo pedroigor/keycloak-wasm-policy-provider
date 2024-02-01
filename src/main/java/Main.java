@@ -8,6 +8,8 @@ import org.keycloak.admin.client.resource.RealmResource;
 import org.keycloak.representations.idm.ClientRepresentation;
 import org.keycloak.representations.idm.authorization.PolicyRepresentation;
 
+import static org.keycloak.authorization.policy.WasmPolicyProvider.WASM_FILE;
+
 /**
  * @author <a href="mailto:psilva@redhat.com">Pedro Igor</a>
  */
@@ -38,7 +40,9 @@ public class Main {
         PolicyRepresentation wasmPolicy = authorization.policies().findByName("My WASM Policy");
         Map<String, String> config = wasmPolicy.getConfig();
 
-        config.put("myconfig", "somevalue");
+        // at the moment either rbac or abac
+        // config.put(WASM_FILE, "rbac");
+        config.put(WASM_FILE, "abac");
 
         authorization.policies().policy(wasmPolicy.getId()).update(wasmPolicy);
     }
